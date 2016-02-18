@@ -12,3 +12,6 @@
 [log]
     decorate = true
     abbrevCommit = true
+
+[alias]
+    lg = log --oneline --graph --all --color
