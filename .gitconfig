@@ -3,6 +3,7 @@
 # Please adapt and uncomment the following lines:
 	name = Akshay Narayan
     email = akshay.narayan@berkeley.edu
+    editor = "vim"
 
 [color]
     ui = auto
