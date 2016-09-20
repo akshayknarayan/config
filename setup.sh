@@ -51,7 +51,7 @@ git clone https://github.com/mileszs/ack.vim.git
 git clone https://github.com/airblade/vim-gitgutter.git
 git clone --depth=1 https://github.com/scrooloose/syntastic.git
 cd ~/config
-ln -s ./.vimrc ~/.vimrc
+ln -s ~/config/.vimrc ~/.vimrc
 
 
 
