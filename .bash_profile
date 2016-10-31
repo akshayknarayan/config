@@ -9,3 +9,5 @@ export LS_COLORS='di=1:*.h=31:*.cpp=34:*.py=34'
 export GOPATH=~/go-work
 export PATH=/opt/bin:$GOPATH/bin:$PATH
 
+source ~/config/git-completion.bash
+
