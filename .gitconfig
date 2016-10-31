@@ -21,3 +21,6 @@
     lg = log --oneline --graph --all --color
     st = status
     co = commit -a -m "tmp"
+
+[core]
+    editor = /usr/bin/vim

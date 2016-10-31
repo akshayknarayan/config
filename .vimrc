@@ -226,7 +226,8 @@ map <leader>bd :Bclose<cr>
 map <leader>ba :1,1000 bd!<cr>
 
 " Useful mappings for managing tabs
-map <leader>tn :tabnew<cr>
+map <leader>tn :tabnext<cr>
+map <leader>tp :tabp<cr>
 map <leader>to :tabonly<cr>
 map <leader>tc :tabclose<cr>
 map <leader>tm :tabmove 
@@ -296,6 +297,9 @@ autocmd BufWrite *.coffee :call DeleteTrailingWS()
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => vimgrep searching and cope displaying
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+let g:ackprg = 'ag --vimgrep'
+
 " When you press gv you vimgrep after the selected text
 vnoremap <silent> gv :call VisualSelection('gv')<CR>
 
@@ -423,8 +427,10 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+let g:syntastic_aggregate_errors = 1
 
 let g:syntastic_quiet_messages = { "regex" : "too long" }
 let g:syntastic_cpp_compiler = 'clang++'
 let g:syntastic_cpp_compiler_options = ' -std=c++0x -stdlib=libc++'
+let g:syntastic_go_checkers = ['go', 'gofmt', 'govet']
 let g:syntastic_scala_compiler = 'scalac'
