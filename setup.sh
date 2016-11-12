@@ -42,6 +42,8 @@ ln -s ~/config/.tmux.conf ~/.tmux.conf
 mkdir -p ~/.vim
 cd ~/.vim
 git clone https://github.com/tpope/vim-pathogen.git
+mkdir -p autoload
+ln -s ./vim-pathogen/autoload/pathogen.vim autoload/
 
 # vim plugins
 mkdir -p bundle
@@ -50,6 +52,7 @@ git clone https://github.com/altercation/vim-colors-solarized.git
 git clone https://github.com/mileszs/ack.vim.git
 git clone https://github.com/airblade/vim-gitgutter.git
 git clone --depth=1 https://github.com/scrooloose/syntastic.git
+
 cd ~/config
 ln -s ~/config/.vimrc ~/.vimrc
 
