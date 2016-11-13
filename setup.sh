@@ -18,6 +18,8 @@ then
 	#Enable ECN
 	sudo sysctl -w net.inet.tcp.ecn_initiate_out=1
 	sudo sysctl -w net.inet.tcp.ecn_negotiate_in=1
+    
+    curl -O https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash
 
 elif [ `echo $os | grep -c "Ubuntu"` -eq 1 ]
 then
@@ -26,10 +28,12 @@ then
 	sudo apt-get update
 
 	#basics
-	sudo apt-get install -y git vim tmux build-essential gparted python3 curl mosh silversearcher-ag texlive dconf-cli
+	sudo apt-get install -y git vim tmux build-essential gparted python3 curl mosh silversearcher-ag texlive dconf-cli golang-go npm nodejs-legacy
 
 	# enable ECN
 	sudo echo 1 > /proc/sys/net/ipv4/tcp_ecn
+
+    curl -O https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash
 
     mkdir -p ~/etc
     cd ~/etc
@@ -41,6 +45,8 @@ then
 
     git clone git@github.com:Anthony25/gnome-terminal-colors-solarized.git
     bash gnome-terminal-colors-solarized/set-dark.sh --install-dircolors
+
+    cd ~
 fi
 
 # link config files
