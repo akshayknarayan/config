@@ -26,10 +26,21 @@ then
 	sudo apt-get update
 
 	#basics
-	sudo apt-get install -y git vim tmux build-essential gparted python3 curl mosh silversearcher-ag texlive
+	sudo apt-get install -y git vim tmux build-essential gparted python3 curl mosh silversearcher-ag texlive dconf-cli
 
 	# enable ECN
 	sudo echo 1 > /proc/sys/net/ipv4/tcp_ecn
+
+    mkdir -p ~/etc
+    cd ~/etc
+
+    curl -O http://www.marksimonson.com/assets/content/fonts/AnonymousPro-1.002.zip
+    unzip AnonymousPro-1.002.zip
+    mkdir ~/.fonts
+    find . -name "*.ttf" -exec cp {} ~/.fonts \;
+
+    git clone git@github.com:Anthony25/gnome-terminal-colors-solarized.git
+    bash gnome-terminal-colors-solarized/set-dark.sh --install-dircolors
 fi
 
 # link config files
@@ -42,8 +53,7 @@ ln -s ~/config/.tmux.conf ~/.tmux.conf
 mkdir -p ~/.vim
 cd ~/.vim
 git clone https://github.com/tpope/vim-pathogen.git
-mkdir -p autoload
-ln -s ./vim-pathogen/autoload/pathogen.vim autoload/
+cp -r vim-pathogen/autoload/ .
 
 # vim plugins
 mkdir -p bundle
