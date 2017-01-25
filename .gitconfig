@@ -24,3 +24,6 @@
 
 [core]
     editor = /usr/bin/vim
+
+[merge]
+    ff = only
