@@ -412,4 +412,9 @@ let g:syntastic_quiet_messages = { "regex" : "too long" }
 let g:syntastic_cpp_compiler = 'clang++'
 let g:syntastic_cpp_compiler_options = ' -std=c++0x -stdlib=libc++'
 let g:syntastic_go_checkers = ['go', 'gofmt', 'govet']
-let g:syntastic_scala_compiler = 'scalac'
+let g:syntastic_scala_compiler = '' "scalac
+let g:syntastic_rust_checkers = ['cargo']
+
+" Rust
+let g:rustfmt_autosave = 1
+let g:rustfmt_fail_silently = 1
