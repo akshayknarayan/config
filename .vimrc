@@ -414,6 +414,7 @@ let g:syntastic_cpp_compiler_options = ' -std=c++0x -stdlib=libc++'
 let g:syntastic_go_checkers = ['go', 'gofmt', 'govet']
 let g:syntastic_scala_compiler = '' "scalac
 let g:syntastic_rust_checkers = ['cargo']
+let g:syntastic_rust_cargo_args = 'test --no-run'
 
 " Rust
 let g:rustfmt_autosave = 1
