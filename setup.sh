@@ -67,7 +67,7 @@ cd bundle
 git clone https://github.com/altercation/vim-colors-solarized.git
 git clone https://github.com/mileszs/ack.vim.git
 git clone https://github.com/airblade/vim-gitgutter.git
-git clone --depth=1 https://github.com/scrooloose/syntastic.git
+git clone https://github.com/w0rp/ale.git
 
 cd ~/config
 ln -s ~/config/.vimrc ~/.vimrc
