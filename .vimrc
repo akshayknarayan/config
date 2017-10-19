@@ -299,13 +299,15 @@ autocmd BufWrite *.coffee :call DeleteTrailingWS()
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => vimgrep searching and cope displaying
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Use FZF
+set rtp+=/usr/local/opt/fzf
 
 if executable('ag')
     let g:ackprg = 'ag --vimgrep --smart-case'
     map <leader>f :Ack 
 endif
 
-map <leader>p :CtrlPMixed<cr>
+map <leader>p :FZF<cr>
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
