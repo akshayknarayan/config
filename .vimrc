@@ -405,3 +405,17 @@ let g:rustfmt_fail_silently = 1
 " => ALE
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:airline#extensions#ale#enabled = 1
+let g:ale_rust_cargo_use_check = 1
+
+let g:ale_linters = {
+\   'go': ['gofmt', 'go build', 'golint', 'go vet'],
+\}
+
+" Put these lines at the very end of your vimrc file.
+
+" Load all plugins now.
+" Plugins need to be added to runtimepath before helptags can be generated.
+packloadall
+" Load all of the helptags now, after plugins have been loaded.
+" All messages and errors will be ignored.
+silent! helptags ALL
