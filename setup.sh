@@ -4,7 +4,7 @@ if !which brew
 then	
     /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 fi
-brew install git vim tmux the_silver_searcher python python3 mobile-shell nmap macvim colormake watch wget zsh
+brew install git vim tmux the_silver_searcher python python3 mobile-shell nmap macvim colormake watch wget zsh fzf
 brew tap caskroom/cask
 brew cask install Seil google-chrome xquartz mactex
 
@@ -22,6 +22,9 @@ curl -O http://www.marksimonson.com/assets/content/fonts/AnonymousPro-1.002.zip
 unzip AnonymousPro-1.002.zip
 
 cd ~
+
+# fzf
+$(brew --prefix)/opt/fzf/install
 
 # link config files
 ln -s ~/config/.bash_profile ~/.bash_profile
