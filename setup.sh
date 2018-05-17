@@ -4,7 +4,7 @@ if !which brew
 then	
     /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 fi
-brew install git vim tmux the_silver_searcher python python3 mobile-shell nmap macvim colormake watch wget zsh fzf
+brew install git vim tmux the_silver_searcher python python3 mobile-shell nmap macvim colormake watch wget zsh fzf golang cmake
 brew tap caskroom/cask
 brew cask install Seil google-chrome xquartz mactex
 
@@ -22,6 +22,9 @@ curl -O http://www.marksimonson.com/assets/content/fonts/AnonymousPro-1.002.zip
 unzip AnonymousPro-1.002.zip
 
 cd ~
+
+# rust
+curl https://sh.rustup.rs -sSf | sh
 
 # fzf
 $(brew --prefix)/opt/fzf/install
@@ -48,6 +51,9 @@ git clone https://github.com/airblade/vim-gitgutter.git
 git clone https://github.com/vim-airline/vim-airline.git
 git clone https://github.com/w0rp/ale.git
 git clone https://github.com/autozimu/LanguageClient-neovim.git
+https://github.com/Valloric/YouCompleteMe.git
+cd ~/.vim/bundle/YouCompleteMe
+./install.py --clang-completer --go-completer --rust-completer
 
 cd ~/config
 ln -s ~/config/.vimrc ~/.vimrc
