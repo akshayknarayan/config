@@ -1,4 +1,28 @@
-call pathogen#infect()
+" vim-plug
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
+call plug#begin('~/.vim/plugged')
+
+Plug 'Valloric/YouCompleteMe', {'do': 'python3 install.py --all'}
+Plug 'mileszs/ack.vim'
+Plug 'w0rp/ale'
+Plug 'junegunn/fzf', { 'dir': '~/etc/fzf', 'do': './install --all' }
+Plug 'rust-lang/rust.vim'
+Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
+Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
+Plug 'lilydjwg/colorizer'
+Plug 'altercation/vim-colors-solarized'
+Plug 'autozimu/LanguageClient-neovim', {
+    \ 'branch': 'next',
+    \ 'do': 'bash install.sh',
+    \ }
+
+call plug#end()
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -182,9 +206,6 @@ map <C-l> <C-W>l
 " Useful mappings for managing tabs
 map <leader>tn :tabnext<cr>
 map <leader>tp :tabp<cr>
-map <leader>to :tabonly<cr>
-map <leader>tc :tabclose<cr>
-map <leader>tm :tabmove 
 
 " Opens a new tab with the current buffer's path
 " Super useful when editing files in the same directory
@@ -252,10 +273,15 @@ autocmd BufWrite *.coffee :call DeleteTrailingWS()
 " => vimgrep searching and cope displaying
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Use FZF
-set rtp+=/usr/local/opt/fzf
+set rtp+=~/.fzf
 
 if executable('ag')
     let g:ackprg = 'ag --vimgrep --smart-case'
+    map <leader>f :Ack 
+endif
+
+if executable('rg')
+    let g:ackprg = 'rg --vimgrep --smart-case'
     map <leader>f :Ack 
 endif
 
@@ -267,12 +293,8 @@ map <leader>p :FZF<cr>
 " Remove the Windows ^M - when the encodings gets messed up
 noremap <Leader>m mmHmt:%s/<C-V><cr>//ge<cr>'tzt'm
 
-" Quickly open a buffer for scripbble
-map <leader>q :e ~/buffer<cr>
-
 " Toggle paste mode on and off
 map <leader>pp :setlocal paste!<cr>
-
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -335,7 +357,10 @@ function! <SID>BufcloseCloseIt()
    endif
 endfunction
 
-" Rust
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Rust
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 let g:rustfmt_autosave = 1
 let g:rustfmt_fail_silently = 1
 
@@ -346,7 +371,8 @@ let g:airline#extensions#ale#enabled = 1
 let g:ale_rust_cargo_use_check = 1
 
 let g:ale_linters = {
-\   'go': ['gofmt', 'go build', 'golint', 'go vet'],
+\   'rust': ['cargo', 'rls', 'rustc', 'rustfmt', 'trim_whitespace', 'remove_tailing_lines'],
+\   'go': ['gofmt', 'go build', 'golint', 'go vet', 'trim_whitespace', 'remove_tailing_lines'],
 \}
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -357,7 +383,7 @@ set hidden
 
 let g:LanguageClient_serverCommands = {
     \ 'rust': ['rustup', 'run', 'nightly', 'rls'],
-    \ }
+\}
 
 nnoremap <silent> <leader>k :call LanguageClient_textDocument_hover()<CR>
 "nnoremap <silent> <leader>] :call LanguageClient_textDocument_definition()<CR>
