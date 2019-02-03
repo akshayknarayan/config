@@ -3,7 +3,7 @@
 # Please adapt and uncomment the following lines:
 	name = Akshay Narayan
     email = akshayn@mit.edu
-    editor = "vim"
+    editor = vim
 
 [color]
     ui = auto
@@ -23,7 +23,7 @@
     co = commit -a -m "tmp"
 
 [core]
-    editor = /usr/bin/vim
+	editor = vim
 
 [merge]
     ff = only
