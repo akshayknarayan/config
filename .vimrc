@@ -371,7 +371,7 @@ let g:airline#extensions#ale#enabled = 1
 let g:ale_rust_cargo_use_check = 1
 
 let g:ale_linters = {
-\   'rust': ['cargo', 'rls', 'rustc', 'rustfmt', 'trim_whitespace', 'remove_tailing_lines'],
+\   'rust': ['cargo', 'rls', 'rustfmt', 'trim_whitespace', 'remove_tailing_lines'],
 \   'go': ['gofmt', 'go build', 'golint', 'go vet', 'trim_whitespace', 'remove_tailing_lines'],
 \   'cpp': ['clang-format', 'trim_whitespace', 'remove_tailing_lines'],
 \}
