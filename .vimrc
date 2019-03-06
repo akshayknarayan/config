@@ -16,6 +16,7 @@ Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 Plug 'lilydjwg/colorizer'
+Plug 'peter-edge/vim-capnp'
 Plug 'altercation/vim-colors-solarized'
 Plug 'autozimu/LanguageClient-neovim', {
     \ 'branch': 'next',
@@ -372,6 +373,7 @@ let g:ale_rust_cargo_use_check = 1
 let g:ale_rust_cargo_check_examples = 1
 let g:ale_rust_cargo_check_tests = 1
 let g:ale_rust_cargo_use_clippy = 1
+let g:ale_rust_cargo_check_all_targets = 1
 
 let g:ale_linters = {
 \   'rust': ['cargo', 'rls', 'rustfmt', 'trim_whitespace', 'remove_tailing_lines'],
