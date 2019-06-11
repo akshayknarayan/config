@@ -7,7 +7,7 @@ endif
 
 call plug#begin('~/.vim/plugged')
 
-Plug 'Valloric/YouCompleteMe', {'do': 'python3 install.py --all'}
+Plug 'Valloric/YouCompleteMe', {'do': 'python3 install.py --rust-completer --clang-completer --go-completer'}
 Plug 'mileszs/ack.vim'
 Plug 'w0rp/ale'
 Plug 'junegunn/fzf', { 'dir': '~/etc/fzf', 'do': './install --all' }
@@ -369,6 +369,9 @@ let g:rustfmt_fail_silently = 0
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:airline#extensions#ale#enabled = 1
 let g:ale_rust_cargo_use_check = 1
+let g:ale_rust_cargo_check_examples = 1
+let g:ale_rust_cargo_check_tests = 1
+let g:ale_rust_cargo_use_clippy = 1
 
 let g:ale_linters = {
 \   'rust': ['cargo', 'rls', 'rustfmt', 'trim_whitespace', 'remove_tailing_lines'],
