@@ -362,7 +362,7 @@ endfunction
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 let g:rustfmt_autosave = 1
-let g:rustfmt_fail_silently = 1
+let g:rustfmt_fail_silently = 0
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => ALE
@@ -373,6 +373,7 @@ let g:ale_rust_cargo_use_check = 1
 let g:ale_linters = {
 \   'rust': ['cargo', 'rls', 'rustc', 'rustfmt', 'trim_whitespace', 'remove_tailing_lines'],
 \   'go': ['gofmt', 'go build', 'golint', 'go vet', 'trim_whitespace', 'remove_tailing_lines'],
+\   'cpp': ['clang-format', 'trim_whitespace', 'remove_tailing_lines'],
 \}
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -387,7 +388,7 @@ let g:LanguageClient_serverCommands = {
 
 nnoremap <silent> <leader>k :call LanguageClient_textDocument_hover()<CR>
 "nnoremap <silent> <leader>] :call LanguageClient_textDocument_definition()<CR>
-nnoremap <silent> <leader>] :YcmCompleter GoToDefinition<cr>
+nnoremap <silent> <leader>d :YcmCompleter GoToDefinition<cr>
 nnoremap <silent> <leader>n :call LanguageClient_textDocument_rename()<CR>
 
 " Put these lines at the very end of your vimrc file.
