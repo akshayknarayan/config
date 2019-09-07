@@ -1,3 +1,13 @@
+# If you come from bash you might have to change your $PATH.
+# export PATH=$HOME/bin:/usr/local/bin:$PATH
+export GOPATH=~/golang
+export PATH=$PATH:$GOPATH/bin
+export PATH=$PATH:/usr/local/Cellar/perl/5.24.1/bin
+
+# Path to your oh-my-zsh installation.
+export ZSH=/Users/$(whoami)/.oh-my-zsh
+export PATH="/usr/local/opt/openssl/bin:$PATH"
+
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 #ZSH_THEME="pygmalion"
 
@@ -19,8 +29,9 @@ ZSH_TMUX_AUTOSTART_ONCE=true
 ZSH_TMUX_FIXTERM=true
 ZSH_TMUX_AUTOQUIT=false
 
-if test -z "$SSH_AUTH_SOCK" ; then
-    eval $(ssh-agent -s) > /dev/null
+if (( $+commands[tag] )); then
+  tag() { command tag "$@"; source ${TAG_ALIAS_FILE:-/tmp/tag_aliases} 2>/dev/null }
+  alias ag=tag
 fi
 
 alias ls=exa
@@ -32,5 +43,7 @@ export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_ALT_C_COMMAND="fd"
 
 disable r
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
 eval "$(starship init zsh)"
