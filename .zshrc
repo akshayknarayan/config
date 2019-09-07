@@ -1,7 +1,3 @@
-# If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
-
-# Path to your oh-my-zsh installation.
 export ZSH=/Users/$(whoami)/.oh-my-zsh
 export PATH="/opt/homebrew/bin:/Users/$(whoami)/etc/bin:$PATH"
 
@@ -23,8 +19,9 @@ ZSH_TMUX_AUTOSTART_ONCE=true
 ZSH_TMUX_FIXTERM=true
 ZSH_TMUX_AUTOQUIT=false
 
-if test -z "$SSH_AUTH_SOCK" ; then
-    eval $(ssh-agent -s) > /dev/null
+if (( $+commands[tag] )); then
+  tag() { command tag "$@"; source ${TAG_ALIAS_FILE:-/tmp/tag_aliases} 2>/dev/null }
+  alias ag=tag
 fi
 
 alias ls=eza
@@ -36,5 +33,7 @@ export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_ALT_C_COMMAND="fd"
 
 disable r
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
 eval "$(starship init zsh)"
