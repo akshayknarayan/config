@@ -44,4 +44,8 @@ if test -z "$SSH_AUTH_SOCK" ; then
     eval $(ssh-agent -s) > /dev/null
 fi
 
+alias ls="exa"
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
 eval "$(starship init zsh)"
