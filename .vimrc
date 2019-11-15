@@ -1,15 +1,14 @@
 " vim-plug
 if empty(glob('~/.vim/autoload/plug.vim'))
-  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
-    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+    silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+                \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
 call plug#begin('~/.vim/plugged')
 
-Plug 'Valloric/YouCompleteMe', {'do': 'python3 install.py --rust-completer --clang-completer --go-completer'}
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'mileszs/ack.vim'
-Plug 'w0rp/ale'
 Plug 'junegunn/fzf', { 'dir': '~/etc/fzf', 'do': './install --all' }
 Plug 'rust-lang/rust.vim'
 Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
@@ -18,10 +17,6 @@ Plug 'airblade/vim-gitgutter'
 Plug 'lilydjwg/colorizer'
 Plug 'peter-edge/vim-capnp'
 Plug 'altercation/vim-colors-solarized'
-Plug 'autozimu/LanguageClient-neovim', {
-    \ 'branch': 'next',
-    \ 'do': 'bash install.sh',
-    \ }
 
 call plug#end()
 
@@ -366,35 +361,49 @@ let g:rustfmt_autosave = 1
 let g:rustfmt_fail_silently = 0
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => ALE
+" => CoC
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:airline#extensions#ale#enabled = 1
-let g:ale_rust_cargo_use_check = 1
-let g:ale_rust_cargo_check_examples = 1
-let g:ale_rust_cargo_check_tests = 1
-let g:ale_rust_cargo_use_clippy = 1
-let g:ale_rust_cargo_check_all_targets = 1
+set statusline+=%{coc#status()}%{get(b:,'coc_current_function','')}
 
-let g:ale_linters = {
-\   'rust': ['cargo', 'rls', 'rustfmt', 'trim_whitespace', 'remove_tailing_lines'],
-\   'go': ['gofmt', 'go build', 'golint', 'go vet', 'trim_whitespace', 'remove_tailing_lines'],
-\   'cpp': ['clang-format', 'trim_whitespace', 'remove_tailing_lines'],
-\}
+set cmdheight=1
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => LanguageClient
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Use tab for trigger completion with characters ahead and navigate.
+" Use command ':verbose imap <tab>' to make sure tab is not mapped by other plugin.
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 
-set hidden
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
 
-let g:LanguageClient_serverCommands = {
-    \ 'rust': ['rustup', 'run', 'nightly', 'rls'],
-\}
+" Use <c-space> to trigger completion.
+inoremap <silent><expr> <c-space> coc#refresh()
 
-nnoremap <silent> <leader>k :call LanguageClient_textDocument_hover()<CR>
-"nnoremap <silent> <leader>] :call LanguageClient_textDocument_definition()<CR>
-nnoremap <silent> <leader>d :YcmCompleter GoToDefinition<cr>
-nnoremap <silent> <leader>n :call LanguageClient_textDocument_rename()<CR>
+" Highlight symbol under cursor on CursorHold
+autocmd CursorHold * silent call CocActionAsync('highlight')
+
+" Remap for rename current word
+nmap <leader>r <Plug>(coc-rename)
+
+" Use K to show documentation in preview window
+nnoremap <silent> <leader>k :call <SID>show_documentation()<CR>
+
+function! s:show_documentation()
+  if (index(['vim','help'], &filetype) >= 0)
+    execute 'h '.expand('<cword>')
+  else
+    call CocAction('doHover')
+  endif
+endfunction
+
+" Jump to def
+nmap <silent> <leader>e <Plug>(coc-diagnostic-info)
+nmap <silent> <leader>d <Plug>(coc-definition)
+nmap <silent> <leader>di <Plug>(coc-implementation)
 
 " Put these lines at the very end of your vimrc file.
 
