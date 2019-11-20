@@ -281,7 +281,7 @@ if executable('rg')
     map <leader>f :Ack 
 endif
 
-map <leader>p :FZF<cr>
+map <leader>p :call fzf#run({'source': 'fd', 'sink': 'e'})<cr>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Misc
