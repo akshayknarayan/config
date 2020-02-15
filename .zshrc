@@ -1,7 +1,15 @@
 export ZSH=/home/$(whoami)/.oh-my-zsh
 export TERM=xterm-256color
 export GOPATH=/home/$(whoami)/go-work
-export PATH=/opt/bin:${GOPATH}/bin:/usr/local/go/bin:~/.cargo/bin:/snap/bin:$PATH
+export PATH=~/.local/bin:/opt/bin:${GOPATH}/bin:/usr/local/go/bin:~/.cargo/bin:/snap/bin:$PATH
+
+
+# Path to your oh-my-zsh installation.
+export ZSH=/home/$(whoami)/.oh-my-zsh
+
+autoload -Uz compinit promptinit
+compinit
+promptinit
 
 plugins=(git tmux web-search safe-paste zsh-autosuggestions)
 
@@ -44,8 +52,26 @@ if test -z "$SSH_AUTH_SOCK" ; then
     eval $(ssh-agent -s) > /dev/null
 fi
 
-alias ls="exa"
+alias ls=exa
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+# fzf + ag configuration
+export FZF_DEFAULT_COMMAND='rg . --files --hidden --follow'
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+export FZF_ALT_C_COMMAND="fd"
+
+man() {
+    env \
+      LESS_TERMCAP_mb=$(printf "\e[1;31m") \
+      LESS_TERMCAP_md=$(printf "\e[1;31m") \
+      LESS_TERMCAP_me=$(printf "\e[0m") \
+      LESS_TERMCAP_se=$(printf "\e[0m") \
+      LESS_TERMCAP_so=$(printf "\e[1;44;33m") \
+      LESS_TERMCAP_ue=$(printf "\e[0m") \
+      LESS_TERMCAP_us=$(printf "\e[1;32m") \
+      command man "$@"
+}
+
+prompt off
 eval "$(starship init zsh)"
