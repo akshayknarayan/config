@@ -15,7 +15,8 @@ Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 Plug 'lilydjwg/colorizer'
-Plug 'peter-edge/vim-capnp'
+Plug 'cstrahan/vim-capnp'
+Plug 'dcharbon/vim-flatbuffers'
 Plug 'altercation/vim-colors-solarized'
 
 call plug#end()
@@ -188,7 +189,6 @@ map k gk
 
 " Map <Space> to / (search) and Ctrl-<Space> to ? (backwards search)
 map <space> /
-map <c-space> ?
 
 " Disable highlight when <leader><cr> is pressed
 map <silent> <leader><cr> :noh<cr>
@@ -281,7 +281,7 @@ if executable('rg')
     map <leader>f :Ack 
 endif
 
-map <leader>p :call fzf#run({'source': 'fd', 'sink': 'e'})<cr>
+map <leader>p :call fzf#run(fzf#wrap({'source': 'fd'}))<cr>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Misc
