@@ -5,5 +5,24 @@ add_newline = false
 [character]      # The name of the module we are confguring is "character"
 symbol = "➜"     # The "symbol" segment is being set to "➜"
 
-[line_break]
+#[line_break]
+#disabled = true
+
+[hostname]
+ssh_only = false
+disabled = false
+#trim_at = ".companyname.com"
+#prefix = "⟪"
+#suffix = "⟫"
+
+[aws]
+disabled = true
+
+[rust]
+disabled = true
+
+[python]
+disabled = true
+
+[package]
 disabled = true
