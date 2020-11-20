@@ -1,9 +1,6 @@
-# If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
-
-# Path to your oh-my-zsh installation.
 export ZSH=/Users/$(whoami)/.oh-my-zsh
-export PATH="/opt/homebrew/bin:/Users/$(whoami)/etc/bin:$PATH"
+export PATH=/opt/bin:${GOPATH}/bin:/usr/local/go/bin:~/.cargo/bin:/snap/bin:$PATH
+export TERM=xterm-256color
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
