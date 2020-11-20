@@ -1,3 +1,14 @@
+export TERM=xterm-256color
+#eval `dircolors ~/.dir_colors/dircolors`
+
+# If you come from bash you might have to change your $PATH.
+# export PATH=$HOME/bin:/usr/local/bin:$PATH
+export GOPATH=/home/$(whoami)/go-work
+export PATH=/opt/bin:${GOPATH}/bin:/usr/local/go/bin:~/.cargo/bin:/snap/bin:$PATH
+
+# Path to your oh-my-zsh installation.
+export ZSH=/home/$(whoami)/.oh-my-zsh
+
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 #ZSH_THEME="pygmalion"
 
