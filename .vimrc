@@ -10,6 +10,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'mileszs/ack.vim'
 Plug 'junegunn/fzf', { 'dir': '~/etc/fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
 Plug 'rust-lang/rust.vim'
 Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
 Plug 'tpope/vim-fugitive'
@@ -271,15 +272,7 @@ autocmd BufWrite *.coffee :call DeleteTrailingWS()
 " Use FZF
 set rtp+=~/.fzf
 
-if executable('ag')
-    let g:ackprg = 'ag --vimgrep --smart-case'
-    map <leader>f :Ack 
-endif
-
-if executable('rg')
-    let g:ackprg = 'rg --vimgrep --smart-case'
-    map <leader>f :Ack 
-endif
+map <leader>f :Lines<cr> 
 
 map <leader>p :call fzf#run(fzf#wrap({'source': 'fd'}))<cr>
 
