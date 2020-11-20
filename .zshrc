@@ -1,14 +1,11 @@
-# If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
+export ZSH=/Users/$(whoami)/.oh-my-zsh
+export TERM=xterm-256color
+export GOPATH=/home/$(whoami)/go-work
+export PATH=/opt/bin:${GOPATH}/bin:/usr/local/go/bin:~/.cargo/bin:/snap/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH=/Users/$(whoami)/.oh-my-zsh
-export PATH="/opt/homebrew/bin:/Users/$(whoami)/etc/bin:$PATH"
+export ZSH=/home/$(whoami)/.oh-my-zsh
 
-# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-# Add wisely, as too many plugins slow down shell startup.
 plugins=(git tmux web-search safe-paste zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
