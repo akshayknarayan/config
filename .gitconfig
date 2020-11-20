@@ -15,7 +15,7 @@
     abbrevCommit = true
 
 [diff]
-    compactionHeuristic = true
+    identHeuristic = true
 
 [alias]
     lg = log --oneline --graph --all --color
@@ -24,6 +24,3 @@
 
 [core]
     editor = /usr/bin/vim
-
-[merge]
-    ff = only
