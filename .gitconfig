@@ -24,3 +24,15 @@
 
 [core]
     editor = /usr/bin/vim
+
+[merge]
+    ff = only
+
+[pull]
+	ff = only
+
+[filter "lfs"]
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+    process = git-lfs filter-process
