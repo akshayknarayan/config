@@ -19,6 +19,7 @@ Plug 'lilydjwg/colorizer'
 Plug 'cstrahan/vim-capnp'
 Plug 'dcharbon/vim-flatbuffers'
 Plug 'altercation/vim-colors-solarized'
+Plug 'cespare/vim-toml'
 
 call plug#end()
 
