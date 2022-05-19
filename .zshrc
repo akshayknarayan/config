@@ -3,9 +3,6 @@ export TERM=xterm-256color
 export GOPATH=/home/$(whoami)/go-work
 export PATH=/opt/bin:${GOPATH}/bin:/usr/local/go/bin:~/.cargo/bin:/snap/bin:$PATH
 
-# Path to your oh-my-zsh installation.
-export ZSH=/home/$(whoami)/.oh-my-zsh
-
 plugins=(git tmux web-search safe-paste zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
