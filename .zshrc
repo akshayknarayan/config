@@ -1,6 +1,12 @@
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="pygmalion"
-plugins=(git tmux web-search safe-paste)
+#ZSH_THEME="pygmalion"
+
+# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
+# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
+# Example format: plugins=(rails git textmate ruby lighthouse)
+# Add wisely, as too many plugins slow down shell startup.
+plugins=(git tmux web-search safe-paste zsh-autosuggestions)
+
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
@@ -22,5 +28,7 @@ alias ls=exa
 export FZF_DEFAULT_COMMAND='rg . --files --hidden --follow'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_ALT_C_COMMAND="fd"
+
+disable r
 
 eval "$(starship init zsh)"
