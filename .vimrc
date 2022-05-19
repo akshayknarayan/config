@@ -8,7 +8,6 @@ endif
 call plug#begin('~/.vim/plugged')
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'mileszs/ack.vim'
 Plug 'junegunn/fzf', { 'dir': '~/etc/fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'rust-lang/rust.vim'
