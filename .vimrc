@@ -401,6 +401,8 @@ nmap <silent> <leader>e <Plug>(coc-diagnostic-info)
 nmap <silent> <leader>d <Plug>(coc-definition)
 nmap <silent> <leader>di <Plug>(coc-implementation)
 
+let g:coc_disable_startup_warning = 1
+
 " Put these lines at the very end of your vimrc file.
 
 " Load all plugins now.
