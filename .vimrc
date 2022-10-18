@@ -382,6 +382,9 @@ autocmd CursorHold * silent call CocActionAsync('highlight')
 " Remap for rename current word
 nmap <leader>r <Plug>(coc-rename)
 
+" Trigger code actions
+nmap <leader>c <Plug>(coc-codeaction-cursor)
+
 " Use K to show documentation in preview window
 nnoremap <silent> <leader>k :call <SID>show_documentation()<CR>
 
