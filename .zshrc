@@ -11,6 +11,8 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#ff00ff,underline"
+
 # tmux plugin
 ZSH_TMUX_AUTOSTART=true
 ZSH_TMUX_AUTOSTART_ONCE=true
@@ -24,7 +26,7 @@ fi
 alias ls=exa
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-# fzf + ag configuration
+# fzf configuration
 export FZF_DEFAULT_COMMAND='rg . --files --hidden --follow'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_ALT_C_COMMAND="fd"
