@@ -1,22 +1,13 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
-export GOPATH=~/golang
-export PATH=$PATH:$GOPATH/bin
-export PATH=$PATH:/usr/local/Cellar/perl/5.24.1/bin
 
 # Path to your oh-my-zsh installation.
 export ZSH=/Users/$(whoami)/.oh-my-zsh
-export PATH="/usr/local/opt/openssl/bin:$PATH"
+export PATH="/opt/homebrew/bin:$PATH"
 
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 #ZSH_THEME="pygmalion"
-
-# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-# Add wisely, as too many plugins slow down shell startup.
 plugins=(git tmux web-search safe-paste zsh-autosuggestions)
-
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
