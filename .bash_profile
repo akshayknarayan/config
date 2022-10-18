@@ -12,4 +12,4 @@ export PATH=/opt/bin:$GOPATH/bin:$PATH
 source ~/config/git-completion.bash
 
 
-export PATH="$HOME/.cargo/bin:$PATH"
+. "$HOME/.cargo/env"
