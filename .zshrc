@@ -3,7 +3,6 @@ export TERM=xterm-256color
 export GOPATH=/home/$(whoami)/go-work
 export PATH=~/.local/bin:/opt/bin:${GOPATH}/bin:/usr/local/go/bin:~/.cargo/bin:/snap/bin:$PATH
 
-
 # Path to your oh-my-zsh installation.
 export ZSH=/home/$(whoami)/.oh-my-zsh
 
@@ -39,27 +38,9 @@ export FZF_ALT_C_COMMAND="fd"
 
 disable r
 
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-#
-if test -z "$SSH_AUTH_SOCK" ; then
-    eval $(ssh-agent -s) > /dev/null
-fi
-
-alias ls=exa
-
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-# fzf + ag configuration
-export FZF_DEFAULT_COMMAND='rg . --files --hidden --follow'
-export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
-export FZF_ALT_C_COMMAND="fd"
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 man() {
     env \
