@@ -1,6 +1,6 @@
 export TERM=xterm-256color
 export GOPATH=/home/$(whoami)/go-work
-export PATH=~/.local/bin:/opt/bin:${GOPATH}/bin:/usr/local/go/bin:~/.cargo/bin:/snap/bin:$PATH
+export PATH=~/.local/bin:/opt/bin:${GOPATH}/bin:/usr/local/go/bin:~/.cargo/bin:/snap/bin:/mnt/compendium/bin:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH=/home/$(whoami)/.oh-my-zsh
