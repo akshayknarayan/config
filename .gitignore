@@ -6,5 +6,5 @@
 !.gitconfig
 !.zshrc
 !setup.sh
-!alacritty.yml
+!alacritty.toml
 !starship.toml
