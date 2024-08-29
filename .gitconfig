@@ -2,7 +2,7 @@
 [user]
 # Please adapt and uncomment the following lines:
 	name = Akshay Narayan
-    email = akshayn@icsi.berkeley.edu
+    email = akshayn@brown.edu
     editor = vim
 
 [color]
@@ -36,3 +36,5 @@
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
     process = git-lfs filter-process
+[init]
+	defaultBranch = main
