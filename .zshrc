@@ -1,5 +1,9 @@
-# See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-#ZSH_THEME="pygmalion"
+# If you come from bash you might have to change your $PATH.
+# export PATH=$HOME/bin:/usr/local/bin:$PATH
+
+# Path to your oh-my-zsh installation.
+export ZSH=/Users/$(whoami)/.oh-my-zsh
+export PATH="/opt/homebrew/bin:/Users/$(whoami)/etc/bin:$PATH"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
@@ -23,7 +27,7 @@ if test -z "$SSH_AUTH_SOCK" ; then
     eval $(ssh-agent -s) > /dev/null
 fi
 
-alias ls=exa
+alias ls=eza
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 # fzf configuration
