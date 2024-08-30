@@ -38,3 +38,5 @@
     process = git-lfs filter-process
 [init]
 	defaultBranch = main
+[receive]
+	denyCurrentBranch = updateInstead
