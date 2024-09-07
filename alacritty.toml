@@ -28,8 +28,8 @@ white = "#fdf6e3"
 yellow = "#b58900"
 
 [colors.primary]
-background = "#eee8d5"
-foreground = "#002b36"
+foreground = "#eee8d5"
+background = "#002b36"
 
 [env]
 TERM = "xterm-256color"
@@ -38,8 +38,8 @@ TERM = "xterm-256color"
 size = 12.0
 
 [font.bold]
-family = "Anonymous Pro"
-style = "Bold"
+family = "JetBrains Mono"
+style = "Regular"
 
 [font.glyph_offset]
 x = 0
