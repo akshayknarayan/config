@@ -8,3 +8,4 @@
 !setup.sh
 !alacritty.toml
 !starship.toml
+!.wezterm.lua
