@@ -19,6 +19,8 @@ Plug 'cstrahan/vim-capnp'
 Plug 'dcharbon/vim-flatbuffers'
 Plug 'altercation/vim-colors-solarized'
 Plug 'cespare/vim-toml'
+Plug 'benknoble/vim-racket'
+Plug 'benknoble/scribble.vim'
 
 call plug#end()
 
