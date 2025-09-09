@@ -6,14 +6,15 @@ local config = wezterm.config_builder()
 -- config.color_scheme = "Dark Ocean (terminal.sexy)"
 config.color_scheme = "Material (base16)"
 
-config.font = wezterm.font({ family = "JetBrains Mono" })
+--config.font = wezterm.font({ family = "JetBrains Mono" })
+config.font = wezterm.font({ family = "Rec Mono Duotone" })
 config.font_size = 15
 
 config.window_background_opacity = 0.98
 config.macos_window_background_blur = 30
 config.window_decorations = "RESIZE"
 config.window_frame = {
-	font = wezterm.font({ family = "Fira Sans", weight = "Bold" }),
+	font = wezterm.font({ family = "Rec Mono Duotone", weight = "Bold" }),
 	font_size = 12,
 }
 
