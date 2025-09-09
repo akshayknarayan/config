@@ -9,3 +9,5 @@
 !alacritty.toml
 !starship.toml
 !.wezterm.lua
+!waybar
+!config.kdl
