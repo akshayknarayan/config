@@ -375,7 +375,7 @@ autocmd CursorHold * silent call CocActionAsync('highlight')
 nmap <leader>r <Plug>(coc-rename)
 
 " Trigger code actions
-nmap <leader>c <Plug>(coc-codeaction-cursor)
+nmap <leader>x <Plug>(coc-codeaction-cursor)
 
 " Use K to show documentation in preview window
 nnoremap <silent> <leader>k :call <SID>show_documentation()<CR>
@@ -392,6 +392,7 @@ endfunction
 nmap <silent> <leader>e <Plug>(coc-diagnostic-info)
 nmap <silent> <leader>d <Plug>(coc-definition)
 nmap <silent> <leader>di <Plug>(coc-implementation)
+nmap <silent> <leader>c <Plug>(coc-references)
 
 let g:coc_disable_startup_warning = 1
 
