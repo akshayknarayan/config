@@ -10,4 +10,5 @@
 !starship.toml
 !.wezterm.lua
 !waybar
+!swayidle
 !config.kdl
