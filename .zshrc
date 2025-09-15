@@ -1,4 +1,4 @@
-export ZSH=/Users/$(whoami)/.oh-my-zsh
+export ZSH=~/.oh-my-zsh
 export PATH=~/.local/bin:/opt/bin:${GOPATH}/bin:/usr/local/go/bin:~/.cargo/bin:/snap/bin:$PATH
 export TERM=xterm-256color
 
