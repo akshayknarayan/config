@@ -16,7 +16,7 @@ input {
             // layout "us,ru"
             // options "grp:win_space_toggle,compose:ralt,ctrl:nocaps"
             layout "us"
-            options "caps:swapescape"
+            // options "caps:swapescape"
         }
 
         // Enable numlock on startup, omitting this setting disables it.
@@ -312,6 +312,14 @@ window-rule {
     open-floating true
 }
 
+window-rule {
+    // This app-id regular expression will work for both:
+    // - host Firefox (app-id is "firefox")
+    // - Flatpak Firefox (app-id is "org.mozilla.firefox")
+    match app-id=r#"firefox$"# title="^Web Login"
+    open-floating true
+}
+
 // Thuunderbird pop-ups open floating
 window-rule {
     // This app-id regular expression will work for both:
@@ -593,6 +601,10 @@ binds {
     // Powers off the monitors. To turn them back on, do any input like
     // moving the mouse or pressing any other key.
     Mod+Shift+P { power-off-monitors; }
+
+    xF86AudioPlay allow-when-locked=true { spawn-sh "playerctl play-pause"; }
+    XF86AudioNext  allow-when-locked=true { spawn-sh "playerctl next"; }
+    XF86AudioPrev  allow-when-locked=true { spawn-sh "playerctl previous"; }
 }
 
 environment {
