@@ -13,6 +13,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'rust-lang/rust.vim'
 Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
 Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-rhubarb'
 Plug 'airblade/vim-gitgutter'
 Plug 'lilydjwg/colorizer'
 Plug 'cstrahan/vim-capnp'
