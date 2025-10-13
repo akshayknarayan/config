@@ -14,6 +14,9 @@
     decorate = true
     abbrevCommit = true
 
+[interactive]
+    diffFilter = delta --color-only
+
 [diff]
     identHeuristic = true
 
@@ -24,9 +27,11 @@
 
 [core]
 	editor = vim
+    pager = delta
 
 [merge]
     ff = only
+    conflictStyle = zdiff3
 
 [pull]
 	ff = only
@@ -36,5 +41,9 @@
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
     process = git-lfs filter-process
+
 [init]
 	defaultBranch = main
+
+[delta]
+    navigate = true
