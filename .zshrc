@@ -30,7 +30,6 @@ fi
 
 alias ls=eza
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 # fzf configuration
 export FZF_DEFAULT_COMMAND='rg . --files --hidden --follow'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
@@ -63,3 +62,5 @@ PERL_MB_OPT="--install_base \"/home/akshayn/perl5\""; export PERL_MB_OPT;
 PERL_MM_OPT="INSTALL_BASE=/home/akshayn/perl5"; export PERL_MM_OPT;
 
 eval "$(starship init zsh)"
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
