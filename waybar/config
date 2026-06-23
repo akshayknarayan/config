@@ -12,7 +12,7 @@
     "spacing": 1, // Gaps between modules (4px)
     // Choose the order of the modules
     "modules-left": ["pulseaudio", "mpd", "wlr/taskbar"],
-    "modules-center": ["clock", "custom/notifications", "idle_inhibitor"],
+    "modules-center": ["clock", "custom/notifications", "custom/dnd", "idle_inhibitor"],
     "modules-right": ["network", "cpu", "memory", "custom/logout"],
     // "modules-right": ["cpu", "memory", "battery", "network", "tray"],
     // Modules configuration
@@ -43,6 +43,14 @@
         "format-icons": "",
         "tooltip": false,
         "on-click": "makoctl dismiss -a"
+    },
+    "custom/dnd": {
+        "format": "{}",
+        "exec": "makoctl mode | grep -q do-not-disturb && echo $'\uf1f6' || echo $'\uf0f3'",
+        "on-click": "if makoctl mode | grep -q do-not-disturb; then makoctl mode -r do-not-disturb; else makoctl mode -a do-not-disturb; fi; pkill -RTMIN+1 waybar",
+        "interval": 30,
+        "signal": 1,
+        "tooltip": false
     },
     "wlr/taskbar": {
         // "all-outputs": true,
