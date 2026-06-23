@@ -95,7 +95,9 @@ button:hover {
 #mode,
 #idle_inhibitor,
 #scratchpad,
-#mpd {
+#mpd,
+#custom-notifications,
+#custom-logout {
     padding: 0 10px;
     color: #f0f0ff;
     background-color: rgba(30, 30, 46, 0.6);
@@ -280,7 +282,9 @@ label:focus {
 }
 
 #idle_inhibitor {
-    background-color: #2d3436;
+    /*background-color: #2d3436;*/
+    border-radius: 99px;
+    padding: 0 10px;
 }
 
 #idle_inhibitor.activated {

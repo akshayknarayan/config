@@ -12,7 +12,7 @@
     "spacing": 1, // Gaps between modules (4px)
     // Choose the order of the modules
     "modules-left": ["pulseaudio", "mpd", "wlr/taskbar"],
-    "modules-center": ["clock", "custom/notifications"],
+    "modules-center": ["clock", "custom/notifications", "idle_inhibitor"],
     "modules-right": ["network", "cpu", "memory", "custom/logout"],
     // "modules-right": ["cpu", "memory", "battery", "network", "tray"],
     // Modules configuration
@@ -33,14 +33,16 @@
     //     }
     // },
     "custom/logout": {
-        "format": "⏻",
+        "format": "{icon}",
+        "format-icons": "⏻",
         "tooltip": false,
         "on-click": "niri msg action quit"
     },
     "custom/notifications": {
-        "format": "",
+        "format": "{icon}",
+        "format-icons": "",
         "tooltip": false,
-        "on-click": "makoctl dismiss -a",
+        "on-click": "makoctl dismiss -a"
     },
     "wlr/taskbar": {
         // "all-outputs": true,
@@ -125,28 +127,6 @@
         // "format-critical": "{temperatureC}°C {icon}",
         "format": "{temperatureC}°C {icon}",
         "format-icons": ["", "", ""]
-    },
-    "backlight": {
-        // "device": "acpi_video1",
-        "format": "{percent}% {icon}",
-        "format-icons": ["", "", "", "", "", "", "", "", ""]
-    },
-    "battery": {
-        "states": {
-            // "good": 95,
-            "warning": 30,
-            "critical": 15
-        },
-        "format": "{capacity}% {icon}",
-        "format-charging": "{capacity}% ",
-        "format-plugged": "{capacity}% ",
-        "format-alt": "{time} {icon}",
-        // "format-good": "", // An empty format will hide the module
-        // "format-full": "",
-        "format-icons": ["", "", "", "", ""]
-    },
-    "battery#bat2": {
-        "bat": "BAT2"
     },
     "network": {
         // "interface": "wlp2*", // (Optional) To force the use of this interface
