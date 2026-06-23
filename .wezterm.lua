@@ -98,4 +98,6 @@ wezterm.on("update-right-status", function(window, pane)
 	window:set_right_status(wezterm.format(elements))
 end)
 
+config.enable_kitty_keyboard = true
+
 return config
