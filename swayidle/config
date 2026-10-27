@@ -1,2 +1,3 @@
 timeout 120 'swaylock -f'
 timeout 121 'niri msg action power-off-monitors'
+timeout 300 '~/config/swayidle/idle-suspend' resume 'pkill -f "swayidle/idle-suspen[d]"'

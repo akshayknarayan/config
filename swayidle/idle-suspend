@@ -1,0 +1,15 @@
+#!/bin/sh
+# Suspend, but not until 5 minutes after any Jellyfin client last played something.
+# Needs an API key (Jellyfin Dashboard -> API Keys) in ~/.config/jellyfin-apikey.
+key=$(cat ~/.config/jellyfin-apikey 2>/dev/null)
+playing() {
+    curl -sf -m 5 -H "Authorization: MediaBrowser Token=\"$key\"" http://127.0.0.1:8096/Sessions |
+        jq -e 'any(.[]; .NowPlayingItem != null)' >/dev/null
+}
+last=0
+while :; do
+    playing && last=$(date +%s)
+    [ $(($(date +%s) - last)) -ge 300 ] && break
+    sleep 60
+done
+exec systemctl suspend
